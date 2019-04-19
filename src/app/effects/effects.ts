@@ -22,6 +22,8 @@ export class AppEffects {
     filter(([_, loaded]) => !loaded),
     exhaustMap(() => this.todoService.dataFireStore().pipe(
       map((result: Todo[] ) => new LoadTodos(result))
+      // map((result: Todo[] ) => new LoadTodos(result.filter((filteredData: Todo) => filteredData.completed)))
+      // filtered data only completed
     ))
   )
 
