@@ -20,17 +20,17 @@ export enum ActionTypes {
 
   export class AddTodo implements Action {
     readonly type = ActionTypes.AddTodo;
-    constructor(public payload: Todo[]) {}
+    constructor(public payload: Todo) {}
   }
 
   export class UpdateTodo implements Action {
     readonly type = ActionTypes.UpdateTodo;
-    constructor(public payload: Todo[]) {}
+    constructor(public payload: Todo) {}
   }
 
   export class DeleteTodo implements Action {
     readonly type = ActionTypes.DeleteTodo;
-    constructor(public payload: Todo[]) {}
+    constructor(public payload: Todo) {}
   }
   
   export type OrderActions = LoadTodoRequested | LoadTodos | AddTodo | UpdateTodo | DeleteTodo;
