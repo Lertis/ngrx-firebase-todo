@@ -9,6 +9,8 @@ import { LoadOrdersRequested } from './actions/actions';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
+  title = 'initial-state-ngrx';
+
   constructor(private store: Store<AppState>) {}
   
   ngOnInit() {

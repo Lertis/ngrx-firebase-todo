@@ -3,10 +3,10 @@ import { Observable } from 'rxjs';
 import { Todo } from '../model/order';
 import { Store } from '@ngrx/store';
 import { AppState, getAllOrders } from '../reducers/reducer';
-import { OrdersService } from '../orders.service';
 import { AngularFirestore } from 'angularfire2/firestore';
 import { MatDialog } from '@angular/material/dialog';
 import { TodoUpdateComponent } from '../todo-update/todo-update.component';
+import { TodoService } from '../todo.service';
 
 @Component({
   selector: 'app-todo',
@@ -20,7 +20,7 @@ export class TodoComponent implements OnInit {
 
   constructor(
     private store: Store<AppState>,
-    private orderService: OrdersService,
+    private todoService: TodoService,
     private afs: AngularFirestore,
     private dialog: MatDialog) {
     this.todos$ = this.store.select(getAllOrders);
@@ -30,7 +30,7 @@ export class TodoComponent implements OnInit {
   }
 
   add() {
-    this.orderService.addTodo(this.todoText);
+    this.todoService.addTodo(this.todoText);
     this.todoText = '';
   }
 
@@ -43,15 +43,15 @@ export class TodoComponent implements OnInit {
   }
 
   delete(todo: Todo) {
-    this.orderService.deleteTodo(todo);
+    this.todoService.deleteTodo(todo);
   }
 
   checkedCheckBox($event, todo: Todo) {
     console.log('todo:', todo)
     if (!todo.completed) {
-      this.orderService.updateTodo(todo, null, true);
+      this.todoService.updateTodo(todo, null, true);
     } else {
-      this.orderService.updateTodo(todo, null, false);
+      this.todoService.updateTodo(todo, null, false);
     }
   }
 }

@@ -5,7 +5,7 @@ import { AngularFirestore } from 'angularfire2/firestore';
 import { UUID } from 'angular2-uuid';
  
 @Injectable()
-export class OrdersService {
+export class TodoService {
 
   constructor(private afs: AngularFirestore, private uuid: UUID) {
 
