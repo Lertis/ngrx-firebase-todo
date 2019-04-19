@@ -1,0 +1,10 @@
+<mat-form-field>
+  <input matInput [(ngModel)]="newTodoText" placeholder="Add new todo">
+</mat-form-field>
+
+<button mat-icon-button (click)="success()">
+  <mat-icon>check</mat-icon>
+</button>
+<button mat-icon-button (click)="decline()">
+  <mat-icon>cancel</mat-icon>
+</button>

@@ -1,0 +1,25 @@
+<h1 style="text-align: center">Todos</h1>
+<div class="center-class">
+  <div>
+    <input id="new-todo" (keyup.enter)="add()" class="new-todo" type="text" autofocus [(ngModel)]="todoText" placeholder="What needs to be done?"
+    />
+  </div>
+  <div>
+    <mat-list *ngFor="let todo of todos$ | async"  fxLayoutAlign="center">
+          <mat-list-item >
+            <mat-checkbox (click)="checkedCheckBox($event, todo)" [checked]="todo.completed"></mat-checkbox>
+            <div class="margin-check">
+                {{ todo.text }}
+            </div>
+          </mat-list-item>
+      <div class="right-button">
+          <button mat-icon-button (click)="update(todo)">
+            <mat-icon>create</mat-icon>
+          </button>
+          <button mat-icon-button (click)="delete(todo)">
+            <mat-icon>delete</mat-icon>
+          </button>
+    </div>
+    </mat-list>
+  </div>
+</div>
