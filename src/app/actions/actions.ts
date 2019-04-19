@@ -2,17 +2,35 @@ import { Action } from '@ngrx/store';
 import { Todo } from '../model/order';
 
 export enum ActionTypes {
-    LoadOrdersRequested = '[Orders API] Load Orders Requested',
-    LoadOrders = '[Orders API] Load Orders'
+    LoadTodoRequested = 'Load Todo Requested',
+    LoadTodos = 'Load Todos',
+    AddTodo = 'Add Todo',
+    UpdateTodo = 'Update Todo',
+    DeleteTodo = 'Delete Todo'
   }
   
-  export class LoadOrdersRequested implements Action {
-    readonly type = ActionTypes.LoadOrdersRequested;
+  export class LoadTodoRequested implements Action {
+    readonly type = ActionTypes.LoadTodoRequested;
   };
   
-  export class LoadOrders implements Action {
-    readonly type = ActionTypes.LoadOrders;
+  export class LoadTodos implements Action {
+    readonly type = ActionTypes.LoadTodos;
+    constructor(public payload: Todo[]) {}
+  }
+
+  export class AddTodo implements Action {
+    readonly type = ActionTypes.AddTodo;
+    constructor(public payload: Todo[]) {}
+  }
+
+  export class UpdateTodo implements Action {
+    readonly type = ActionTypes.UpdateTodo;
+    constructor(public payload: Todo[]) {}
+  }
+
+  export class DeleteTodo implements Action {
+    readonly type = ActionTypes.DeleteTodo;
     constructor(public payload: Todo[]) {}
   }
   
-  export type OrderActions = LoadOrdersRequested | LoadOrders;
+  export type OrderActions = LoadTodoRequested | LoadTodos | AddTodo | UpdateTodo | DeleteTodo;

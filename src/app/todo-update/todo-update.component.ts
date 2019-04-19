@@ -17,7 +17,7 @@ export class TodoUpdateComponent implements OnInit {
   }
 
   success() {
-    this.todoService.updateTodo(this.data, this.newTodoText, null);
+    this.todoService.updateTodo(this.data, this.newTodoText, this.data.completed);
     this.dialogRef.close();
   }
 

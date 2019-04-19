@@ -4,7 +4,7 @@ import {
   RouterTestingModule
 } from '@angular/router/testing';
 import { StoreModule } from '@ngrx/store';
-import { ordersReducer } from './reducers/reducer';
+import { todosReducer } from './reducers/reducer';
 import { AppEffects } from './effects/effects';
 import { EffectsModule } from '@ngrx/effects';
 import { AngularFireModule } from '@angular/fire';
@@ -41,7 +41,7 @@ describe('AppComponent', () => {
         ReactiveFormsModule,
         FormsModule,
         RouterTestingModule,
-        StoreModule.forRoot({ orders: ordersReducer }),
+        StoreModule.forRoot({ todo: todosReducer }),
         EffectsModule.forRoot([AppEffects]),
         RouterModule.forRoot(routes),
         AngularFireModule.initializeApp(configFirebase),

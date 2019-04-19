@@ -13,7 +13,7 @@ import { RouterTestingModule } from '@angular/router/testing';
 import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
 import { AppEffects } from './effects/effects';
-import { ordersReducer } from './reducers/reducer';
+import { todosReducer } from './reducers/reducer';
 import { configFirebase, routes } from './app.module';
 import { AngularFireModule } from '@angular/fire';
 import { RouterModule } from '@angular/router';
@@ -42,7 +42,7 @@ describe('TodosService', () => {
                 ReactiveFormsModule,
                 FormsModule,
                 RouterTestingModule,
-                StoreModule.forRoot({ orders: ordersReducer }),
+                StoreModule.forRoot({ todo: todosReducer }),
                 EffectsModule.forRoot([AppEffects]),
                 RouterModule.forRoot(routes),
                 AngularFireModule.initializeApp(configFirebase),

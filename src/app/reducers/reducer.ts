@@ -5,25 +5,25 @@ import { ActionTypes } from '../actions/actions';
 import { Todo } from '../model/order';
 
 export interface AppState {
-    orders: OrdersState;
+    todo: TodosState;
   }
   
-  export interface OrdersState {
-      allOrdersLoaded: boolean;
+  export interface TodosState {
+      allTodosLoaded: boolean;
       data: Todo[] | null;
   }
   
   const intialState = {
-    allOrdersLoaded: false,
+    allTodosLoaded: false,
     data: null
   }
 
   
-export function ordersReducer(state = intialState, action) {
+export function todosReducer(state = intialState, action) {
     switch(action.type) {
-        case ActionTypes.LoadOrders:
+        case ActionTypes.LoadTodos:
         return {
-          allOrdersLoaded: true,
+          allTodosLoaded: true,
           data: action.payload
         };
       default:
@@ -31,7 +31,7 @@ export function ordersReducer(state = intialState, action) {
     }
   }
   
-  const getOrders = createFeatureSelector<AppState, OrdersState>('orders');
+  const getTodos = createFeatureSelector<AppState, TodosState>('todo');
   
-  export const getAllOrders = createSelector(getOrders, state => state.data);
-  export const getAllOrdersLoaded = createSelector(getOrders, state => state.allOrdersLoaded);
+  export const getAllTodos = createSelector(getTodos, state => state.data);
+  export const getAllTodosLoaded = createSelector(getTodos, state => state.allTodosLoaded);

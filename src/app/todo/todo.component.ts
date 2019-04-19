@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Todo } from '../model/order';
 import { Store } from '@ngrx/store';
-import { AppState, getAllOrders } from '../reducers/reducer';
+import { AppState, getAllTodos } from '../reducers/reducer';
 import { AngularFirestore } from 'angularfire2/firestore';
 import { MatDialog } from '@angular/material/dialog';
 import { TodoUpdateComponent } from '../todo-update/todo-update.component';
@@ -23,7 +23,7 @@ export class TodoComponent implements OnInit {
     private todoService: TodoService,
     private afs: AngularFirestore,
     private dialog: MatDialog) {
-    this.todos$ = this.store.select(getAllOrders);
+    this.todos$ = this.store.select(getAllTodos);
   }
 
   ngOnInit() {

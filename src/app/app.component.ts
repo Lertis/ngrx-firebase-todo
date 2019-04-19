@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { AppState } from './reducers/reducer';
-import { LoadOrdersRequested } from './actions/actions';
+import { LoadTodoRequested } from './actions/actions';
 
 @Component({
   selector: 'app-root',
@@ -14,6 +14,6 @@ export class AppComponent {
   constructor(private store: Store<AppState>) {}
   
   ngOnInit() {
-    this.store.dispatch(new LoadOrdersRequested());
+    this.store.dispatch(new LoadTodoRequested());
   }
 }

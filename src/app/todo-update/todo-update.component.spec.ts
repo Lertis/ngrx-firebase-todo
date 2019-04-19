@@ -16,7 +16,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { RouterTestingModule } from '@angular/router/testing';
 import { StoreModule } from '@ngrx/store';
-import { ordersReducer } from '../reducers/reducer';
+import { todosReducer } from '../reducers/reducer';
 import { EffectsModule } from '@ngrx/effects';
 import { RouterModule } from '@angular/router';
 import { routes, configFirebase } from '../app.module';
@@ -38,7 +38,7 @@ describe('TodoUpdateComponent', () => {
         ReactiveFormsModule,
         FormsModule,
         RouterTestingModule,
-        StoreModule.forRoot({ orders: ordersReducer }),
+        StoreModule.forRoot({ todo: todosReducer }),
         EffectsModule.forRoot([AppEffects]),
         RouterModule.forRoot(routes),
         AngularFireModule.initializeApp(configFirebase),

@@ -11,7 +11,7 @@ import { AppComponent } from './app.component';
 
 import { AngularFireModule } from '@angular/fire';
 import { AngularFirestore } from 'angularfire2/firestore';
-import { ordersReducer } from './reducers/reducer';
+import { todosReducer } from './reducers/reducer';
 import { AppEffects } from './effects/effects';
 import { TodoComponent } from './todo/todo.component';
 
@@ -49,7 +49,7 @@ export const configFirebase = {
     BrowserAnimationsModule,
     ReactiveFormsModule,
     FormsModule,
-    StoreModule.forRoot({ orders: ordersReducer }),
+    StoreModule.forRoot({ todo: todosReducer }),
     EffectsModule.forRoot([AppEffects]),
     RouterModule.forRoot(routes),
     StoreDevtoolsModule.instrument({
