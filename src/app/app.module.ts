@@ -27,6 +27,7 @@ import { UUID } from 'angular2-uuid';
 import { TodoUpdateComponent } from './todo-update/todo-update.component';
 import { FlexLayoutModule } from "@angular/flex-layout";
 import { TodoService } from './todo.service';
+import { MetaTagsService } from './services/meta-tags.service';
 export const routes = [
   {
     path: '',
@@ -45,7 +46,7 @@ export const configFirebase = {
 
 @NgModule({
   imports: [
-    BrowserModule,
+    BrowserModule.withServerTransition({ appId: 'serverApp' }),
     BrowserAnimationsModule,
     ReactiveFormsModule,
     FormsModule,
@@ -73,7 +74,8 @@ export const configFirebase = {
     AppEffects,
     TodoService,
     AngularFirestore,
-    UUID
+    UUID,
+    MetaTagsService
   ]
 })
 export class AppModule { }
