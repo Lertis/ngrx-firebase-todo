@@ -11,7 +11,9 @@ import { TodoService } from '../todo.service';
 export class TodoUpdateComponent implements OnInit {
   newTodoText: string;
   constructor(private todoService: TodoService, private dialogRef: MatDialogRef<TodoUpdateComponent>,
-  @Inject(MAT_DIALOG_DATA) public data: Todo) { }
+  @Inject(MAT_DIALOG_DATA) public data: Todo) {
+    this.newTodoText = data.text;
+  }
 
   ngOnInit() {
   }

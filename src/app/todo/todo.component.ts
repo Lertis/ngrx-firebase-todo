@@ -36,8 +36,8 @@ export class TodoComponent implements OnInit {
 
   update(todo: Todo) {
     this.dialog.open(TodoUpdateComponent, {
-      width: '40%',
-      height: '15%',
+/*       width: '100%',
+      height: '20%', */
       data: todo
     })
   }

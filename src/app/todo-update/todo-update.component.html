@@ -1,10 +1,20 @@
-<mat-form-field>
-  <input matInput [(ngModel)]="newTodoText" placeholder="Add new todo">
-</mat-form-field>
+<div>
+  <div>
+    <mat-form-field>
+      <input matInput [(ngModel)]="newTodoText" placeholder="Change todo text">
+    </mat-form-field>
+  </div>
 
-<button mat-icon-button (click)="success()">
-  <mat-icon>check</mat-icon>
-</button>
-<button mat-icon-button (click)="decline()">
-  <mat-icon>cancel</mat-icon>
-</button>
+  <div class="update-buttons-inline-flex">
+    <div>
+      <button mat-icon-button (click)="success()">
+        <mat-icon>check</mat-icon>
+      </button>
+    </div>
+    <div>
+      <button mat-icon-button (click)="decline()" id="decline-button">
+        <mat-icon>cancel</mat-icon>
+      </button>
+    </div>
+  </div>
+</div>

@@ -2,3 +2,34 @@
 @import '@angular/material/prebuilt-themes/deeppurple-amber.css';
 @import '~todomvc-common/base.css';
 @import '~todomvc-app-css/index.css';
+
+
+$pastel-grey: #f1f1ee;
+$background: rgba(0,0,0,.003);
+
+.background-color-grey {
+    background-color: $pastel-grey;
+ }
+
+.center-class {
+    display: table;
+    margin-left: auto;
+    margin-right: auto;
+}
+    
+.right-button {
+    display: flex;
+}
+    
+.margin-check {
+    margin-top: .3em;
+    margin-left: .5em;
+}
+
+.update-buttons-inline-flex {
+    display: inline-flex;
+}
+
+#decline-button {
+    margin-left: 6.5em;
+}

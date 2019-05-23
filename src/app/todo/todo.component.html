@@ -1,7 +1,7 @@
 <h1 style="text-align: center">Todos</h1>
 <div class="center-class">
   <div>
-    <input id="new-todo" (keyup.enter)="add()" class="new-todo" type="text" autofocus [(ngModel)]="todoText" placeholder="What needs to be done?"
+    <input (keyup.enter)="add()" class="new-todo" type="text" [(ngModel)]="todoText" placeholder="What needs to be done?"
     />
   </div>
   <div>
